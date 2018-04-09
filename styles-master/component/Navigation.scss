@@ -1,0 +1,18 @@
+.navbar-nav {
+    padding: 10px 0;
+    &:after, &:before {
+        content: '';
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+    > li {
+        float: left;
+        list-style-type: none;
+        margin-right: 10px;
+        .active {
+            color: tomato;
+        }
+    }
+}
