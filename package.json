@@ -25,7 +25,6 @@
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
     "gulp-cssnano": "^2.1.2",
-    "gulp-livereload": "^3.8.1",
     "gulp-postcss": "^7.0.1",
     "gulp-sass": "^3.2.1",
     "gulp-sourcemaps": "^2.6.4",
@@ -46,7 +45,6 @@
     "react-waypoint": "^8.0.1",
     "run-sequence": "^2.2.1",
     "sass-loader": "^6.0.6",
-    "semantic-ui-css": "^2.3.1",
     "semantic-ui-react": "^0.79.1",
     "styled-jsx-plugin-sass": "^0.2.4"
   }
