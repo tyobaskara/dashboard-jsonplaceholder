@@ -1,5 +1,3 @@
-'use strict';
- 
 var gulp = require('gulp'),
 sass = require('gulp-sass'),
 postcss = require('gulp-postcss'),
@@ -8,54 +6,134 @@ autoprefixer = require('autoprefixer'),
 concat = require('gulp-concat'),
 browserSync = require('browser-sync').create(),
 path = require("path"),
+html = require('gulp-processhtml'),
 watch = require('gulp-watch'),
 runs = require('run-sequence'),
-cssnano = require('gulp-cssnano');
+htmlmin = require('gulp-htmlmin'),
+historyFallback = require('connect-history-api-fallback'),
+cssnano = require('gulp-cssnano'),
+webpackStream = require('webpack-stream');
 
-var src = path.join(__dirname, 'styles-master/main.scss');
-var dest = path.join(__dirname, 'styles');
-var destDev = path.join(__dirname, 'static');
-var cssSrc = path.join(__dirname, 'styles-master/**/*.@(scss|css)');
+var targetcss = path.join(__dirname, 'dist/assets/css');
 
+var paths = {
+    css: path.join(__dirname, 'src/scss/index.scss'),
+    cssWatch: path.join(__dirname, 'src/scss/**/*.scss'),
+    html: {
+        src: path.join(__dirname, 'src/html/**/*.html'),
+        dist: path.join(__dirname, 'dist/')
+    },
+    jsx: {
+      src: path.join(__dirname, 'src/**/*.js'),
+      dist: path.join(__dirname, 'dist/assets/js')
+    }
+}
+
+// HTML task
+gulp.task('html', function() {
+    return gulp.src(paths.html.src)
+        .pipe(html())
+        .pipe(gulp.dest(paths.html.dist));
+});
+gulp.task('html:min', function() {
+    return gulp.src(paths.html.src)
+        .pipe(html())
+        .pipe(htmlmin({collapseWhitespace: true}))
+        .pipe(gulp.dest(paths.html.dist));
+});
+
+// compile sass
 gulp.task('sass', function() {
-  return gulp.src(src)
+return gulp.src(paths.css)
     .pipe(sourcemaps.init())
-    .pipe(concat('main.css'))
+    .pipe(concat('bundle.min.css'))
     .pipe(sass({ includePaths: 'node_modules/' }).on('error', sass.logError))
     .pipe(postcss([autoprefixer({ browsers: ['> 0%'] })]))
     .pipe(sourcemaps.write('./maps'))
-    .pipe(gulp.dest(destDev))
-    .pipe(browserSync.stream());
+    .pipe(gulp.dest(targetcss));
 })
-
+  
 gulp.task('sass:min', function() {
-  return gulp.src(src)
-    .pipe(concat('main.css'))
+return gulp.src(paths.css)
+    .pipe(concat('bundle.min.css'))
     .pipe(sass({ includePaths: 'node_modules/', outputStyle: 'compressed' }))
     .pipe(postcss([autoprefixer({ browsers: ['> 0%'] })]))
     .pipe(cssnano())
-    .pipe(gulp.dest(dest));
+    .pipe(gulp.dest(targetcss));
 })
- 
-gulp.task('sass-watch', function() {
-  watch(cssSrc, function() { 
-    runs('sass', function() {
-      browserSync.reload()
-    }); 
-  });
+
+//Watcher
+gulp.task('watch', function() {
+    watch(paths.cssWatch, function() { runs('sass', function() {
+        browserSync.reload()
+      }); });
+    watch(path.join(__dirname, 'src/html/**/*.html'), function() { runs('html', function() {
+        browserSync.reload()
+      }); });
+    watch(paths.jsx.src, function() { runs('react', function() {
+        browserSync.reload()
+    }); });
 });
 
+// serve
+gulp.task('browser', function() {
+    browserSync.init({
+      open: true,
+      server: {
+        baseDir: './dist',
+        middleware: [historyFallback()]
+      }
+    })
+  })
+
+// compile react
+gulp.task('react', function() {
+    return gulp.src(paths.jsx.src)
+    .pipe(
+    webpackStream({
+        devtool: 'cheap-module-eval-sourcemap',
+        output: {
+            path: path.resolve(__dirname, 'dist/assets/js'),
+            filename: 'bundle.js',
+            publicPath: '/dist/'
+        },
+        module: {
+            loaders: [
+                {
+                    test: /\.js$/,
+                    include: path.resolve(__dirname, 'src'),
+                    loader: 'babel-loader'
+                },
+                {
+                    test: /\.(png|jpg|woff|woff2|svg|eot|gif|ttf)$/,
+                    loader: 'file-loader',
+                    include: path.join(__dirname, 'src')
+                },
+                {
+                    test: /\.json$/,
+                    loader: 'json-loader'
+                }
+            ]
+        }
+    })
+    )
+    .on('error', function() {
+    this.emit('end')
+    })
+    .pipe(gulp.dest(paths.jsx.dist))
+})
+  
+gulp.task('react:min', function() {
+    return gulp.src(paths.jsx.src)
+    .pipe(webpackStream(require('./webpack.config.js')))
+    .pipe(gulp.dest(paths.jsx.dist))
+})
+
+//GULP COMMAND
 // dev mode
-gulp.task('default', ['sass','sass-watch'], function() {
-  browserSync.init({
-    proxy: {
-      target: "http://localhost:4000",
-      ws: true
-  }
-  });
-});
+gulp.task('default', ['html', 'sass', 'react', 'watch', 'browser']);
 
 // prod mode - minify files
 gulp.task('build', function() {
-    runs('sass:min');
+    runs('html:min', 'sass:min', 'react:min');
 });

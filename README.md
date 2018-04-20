@@ -1,5 +1,25 @@
-# next-js-2
+# Install dependencies
+* npm install
 
-- npm install
-- npm run dev 
-- gulp
+# Update dependencies
+* npm i -g npm-check && npm-check -u (first time only)
+* npm run update (after first installed)
+
+# Run development mode
+* npm run start
+
+# Build production mode
+* npm run build
+
+# Deploy in bash command
+* netlify deploy
+* choose sites
+* path to dist/
+
+# Deploy
+* npm run deploy
+
+# What's ?
+* React helmet
+* React Router
+* Webpack Combined inside gulp
