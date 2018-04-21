@@ -36,7 +36,6 @@ export default class UserList extends React.Component {
 
         return (
             <div className="users">
-                { !this.state.status && 'Loading...' }
                 <table className="table table-responsive">
                     <thead>
                         <tr>
@@ -50,6 +49,7 @@ export default class UserList extends React.Component {
                         </tr>
                     </thead>
                     <tbody>
+                        { !this.state.status && <tr><td colSpan="7">Loading...</td></tr> }
                         { Users }
                     </tbody>
                 </table>

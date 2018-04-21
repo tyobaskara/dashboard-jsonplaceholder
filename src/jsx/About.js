@@ -8,7 +8,9 @@ const About = () => (
         </Helmet>
 
         <div className="container-fluid">
-            <h1>About</h1>
+            <div className="container">
+                <h1>About</h1>
+            </div>
         </div>
     </div>
 )
