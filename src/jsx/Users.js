@@ -10,7 +10,7 @@ const Users = () => (
 
         <div className="container-fluid">
             <div className="container">
-                <h1>Users</h1>
+                <h1>Users List</h1>
                 <UserList />
             </div>
         </div>

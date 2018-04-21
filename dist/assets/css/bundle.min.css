@@ -11561,4 +11561,9 @@ footer {
         footer > ul > li a > i:hover, footer > ul > li a > i:active {
           color: #ef7a16; }
 
+.users {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -ms-overflow-style: -ms-autohiding-scrollbar; }
+
 /*# sourceMappingURL=maps/bundle.min.css.map */

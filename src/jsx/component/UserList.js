@@ -35,18 +35,18 @@ export default class UserList extends React.Component {
         );
 
         return (
-            <div>
+            <div className="users">
                 { !this.state.status && 'Loading...' }
-                <table>
+                <table className="table table-responsive">
                     <thead>
                         <tr>
-                            <td>Id</td>
-                            <td>Name</td>
-                            <td>Username</td>
-                            <td>Email</td>
-                            <td>Phone</td>
-                            <td>Albums</td>
-                            <td>Posts</td>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Username</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Albums</th>
+                            <th>Posts</th>
                         </tr>
                     </thead>
                     <tbody>
