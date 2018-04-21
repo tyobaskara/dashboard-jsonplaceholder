@@ -1,6 +1,5 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { HeroBanner } from './component/herobanner';
 
 const Users = () => (
     <div>
@@ -9,12 +8,7 @@ const Users = () => (
         </Helmet>
 
         <div className="container-fluid">
-            <HeroBanner 
-                title={<h1 className="title">Web Developer</h1>}
-                subtitle={<h2 className="subtitle">Don't be afraid to be Great</h2>}
-                images="./assets/images/herobanner-2.jpg" 
-                altImages="tyobaskara" 
-            />
+            <h1>Users</h1>
         </div>
     </div>
 )
