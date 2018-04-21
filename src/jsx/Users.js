@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import UserList from './component/UserList';
 
 const Users = () => (
     <div>
@@ -8,7 +9,10 @@ const Users = () => (
         </Helmet>
 
         <div className="container-fluid">
-            <h1>Users</h1>
+            <div className="container">
+                <h1>Users</h1>
+                <UserList />
+            </div>
         </div>
     </div>
 )

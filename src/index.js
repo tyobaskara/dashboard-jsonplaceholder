@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, browserHistory, Switch, Redirect } from 'react-router-dom';
-import { Navigation } from './jsx/component/navigation';
-import { Footer } from './jsx/component/footer';
+import { Navigation } from './jsx/component/Navigation';
+import { Footer } from './jsx/component/Footer';
 
 import Users from './jsx/Users';
 import About from './jsx/About';
-import { Page404 } from './jsx/component/page404';
+import { Page404 } from './jsx/component/Page404';
 
 
 const App = () =>(
