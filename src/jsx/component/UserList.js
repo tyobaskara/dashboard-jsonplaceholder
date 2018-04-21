@@ -31,7 +31,7 @@ export default class UserList extends React.Component {
   
     render() {
         const Users = this.state.users.map((user, index) => 
-            <User data={user} />
+            <User data={user} key={index}/>
         );
 
         return (

@@ -1,7 +1,7 @@
 import React from 'react';
 
 const User = (props) => (
-    <tr key={props.data.id}>
+    <tr>
         <td>{props.data.id}</td>
         <td>{props.data.name}</td>
         <td>{props.data.username}</td>
