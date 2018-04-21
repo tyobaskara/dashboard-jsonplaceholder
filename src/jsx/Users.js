@@ -2,7 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { HeroBanner } from './component/herobanner';
 
-const Home = () => (
+const Users = () => (
     <div>
         <Helmet>
             <title>Home - Prasetya Aji Baskara</title>
@@ -19,4 +19,4 @@ const Home = () => (
     </div>
 )
 
-export default Home;
+export default Users;

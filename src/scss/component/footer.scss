@@ -1,5 +1,7 @@
 footer {
     background: $blue1;
+    position: relative;
+    z-index: 25;
     > ul {
         font-size: 0;
         height: 50px;

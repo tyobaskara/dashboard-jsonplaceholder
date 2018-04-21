@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 export class Navigation extends React.Component{
     state = {
-        NavList: ['Home', 'About'],
+        NavList: ['USERS', 'ABOUT'],
         burgerToggle: 'off'
     }
 
@@ -14,20 +14,17 @@ export class Navigation extends React.Component{
 
     burgerToggle = () => {
         if(this.state.burgerToggle === 'off') {
-            document.getElementsByTagName('html')[0].classList.add("ovHidden");
-            document.getElementsByClassName('nav')[0].classList.add("isActive");
+            document.getElementsByClassName('nav')[0].classList.add("nav-open");
             this.setState({burgerToggle: 'on'});
         }
         else {
-            document.getElementsByTagName('html')[0].classList.remove("ovHidden");
-            document.getElementsByClassName('nav')[0].classList.remove("isActive");
+            document.getElementsByClassName('nav')[0].classList.remove("nav-open");
             this.setState({burgerToggle: 'off'});
         }
     }
 
     offBurgerToggle = () => {
-        document.getElementsByTagName('html')[0].classList.remove("ovHidden");
-        document.getElementsByClassName('nav')[0].classList.remove("isActive");
+        document.getElementsByClassName('nav')[0].classList.remove("nav-open");
         this.setState({burgerToggle: 'off'});   
     }
 
@@ -51,17 +48,14 @@ export class Navigation extends React.Component{
 
         return (
             <nav className="nav nav--fixed">
-                <div className="nav__wrapper">
-                    <div className="container posRelative">
-                        <div className="overlay" onClick={this.burgerToggle}></div>
-                        <div className="nav__logo" onClick={this.offBurgerToggle}>
-                            <NavLink to="/"><img src="/assets/images/logo.png" alt="tyobaskara"/></NavLink>
-                        </div>
-                        <ul className="nav__menu">
-                            {NavList}
-                        </ul>
-                        <div className="hamburgerSlim" onClick={this.burgerToggle}>
-                        </div>
+                <div className="nav-wrap">
+                    <div className="nav__logo" onClick={this.offBurgerToggle}>
+                        <NavLink to="/"><img src="/assets/images/logo.png" alt="tyobaskara"/></NavLink>
+                    </div>
+                    <ul className="nav__menu">
+                        {NavList}
+                    </ul>
+                    <div className="hamburgerSlim" onClick={this.burgerToggle}>
                     </div>
                 </div>
             </nav>
