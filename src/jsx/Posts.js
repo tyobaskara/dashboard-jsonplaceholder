@@ -54,7 +54,7 @@ export default class Posts extends React.Component {
                                     <th>No.</th>
                                     <th>Title</th>
                                     <th>Body</th>
-                                    <th>detail</th>
+                                    <th>Detail</th>
                                 </tr>
                             </thead>
                             <tbody>

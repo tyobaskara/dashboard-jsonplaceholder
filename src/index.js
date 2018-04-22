@@ -6,6 +6,7 @@ import { Footer } from './jsx/component/Footer';
 
 import Users from './jsx/Users';
 import Posts from './jsx/Posts';
+import PostDetail from './jsx/PostDetail';
 import Albums from './jsx/Albums';
 import { Page404 } from './jsx/component/Page404';
 
@@ -17,6 +18,7 @@ const App = () =>(
             <Switch>
                 <Route exact path={'/'} render={props => <Users {...props} />} />
                 <Route exact path={'/posts/:username/:id'} render={props => <Posts {...props} />} />
+                <Route exact path={'/postdetail/:id/comments'} render={props => <PostDetail {...props} />} />
                 <Route exact path={'/albums/:username/:id'} render={props => <Albums {...props} />} />
                 <Route component={Page404}/>
             </Switch>
