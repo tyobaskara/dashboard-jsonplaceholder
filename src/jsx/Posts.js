@@ -55,6 +55,7 @@ export default class Posts extends React.Component {
                                     <th>Title</th>
                                     <th>Body</th>
                                     <th>Detail</th>
+                                    <th colSpan="2"><button>Add New Post</button></th>
                                 </tr>
                             </thead>
                             <tbody>

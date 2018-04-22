@@ -57,6 +57,7 @@ export default class PostDetail extends React.Component {
                                             <th>Name</th>
                                             <th>Email</th>
                                             <th>Body</th>
+                                            <th colSpan="2"><button>Add New Comment</button></th>
                                         </tr>
                                     </thead>
                                     <tbody>

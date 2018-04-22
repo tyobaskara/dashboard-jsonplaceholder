@@ -6,7 +6,6 @@ const Comment = (props) => (
         <td>{props.data.name}</td>
         <td>{props.data.email}</td>
         <td>{props.data.body}</td>
-        <td><button>Add</button></td>
         <td><button>Edit</button></td>
         <td><button>Delete</button></td>
     </tr>
