@@ -47,6 +47,7 @@ export default class Albums extends React.Component {
 
                 <div className="container-fluid">
                     <div className="container">
+                        <h1>Albums List</h1>
                         <table className="table table-responsive">
                             <thead>
                                 <tr>

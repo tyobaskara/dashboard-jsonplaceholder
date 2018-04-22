@@ -47,6 +47,7 @@ export default class Posts extends React.Component {
 
                 <div className="container-fluid">
                     <div className="container">
+                        <h1>Posts List</h1>
                         <table className="table table-responsive">
                             <thead>
                                 <tr>
