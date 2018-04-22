@@ -75,6 +75,7 @@ div,p,span,label {
     }
 }
 .container{
+    padding-top: 25px;
     &--wrap {
         padding: 50px 15px;
         @include ssm {
@@ -83,6 +84,18 @@ div,p,span,label {
     }
     &-fluid {
         min-height: 100vh;
+    }
+}
+.table {
+    font-size: 1.8rem;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    > thead > tr > th {
+        vertical-align: middle;
+    }
+    a {
+        display: block;
+        text-align: center;
     }
 }
 // SLICK SLIDER
@@ -99,3 +112,4 @@ div,p,span,label {
 @import './component/footer';
 @import './component/users';
 @import './component/Photos';
+@import './component/PostDetail';

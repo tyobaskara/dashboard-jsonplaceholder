@@ -11286,14 +11286,25 @@ div, p, span, label {
     div, p, span, label {
       font-size: 1.6rem; } }
 
-.container--wrap {
-  padding: 50px 15px; }
-  @media (max-width: 767px) {
-    .container--wrap {
-      padding: 25px 15px; } }
+.container {
+  padding-top: 25px; }
+  .container--wrap {
+    padding: 50px 15px; }
+    @media (max-width: 767px) {
+      .container--wrap {
+        padding: 25px 15px; } }
+  .container-fluid {
+    min-height: 100vh; }
 
-.container-fluid {
-  min-height: 100vh; }
+.table {
+  font-size: 1.8rem;
+  margin-top: 25px;
+  margin-bottom: 25px; }
+  .table > thead > tr > th {
+    vertical-align: middle; }
+  .table a {
+    display: block;
+    text-align: center; }
 
 .slick-slider {
   visibility: hidden; }
@@ -11570,5 +11581,23 @@ footer {
   overflow: hidden; }
   .photos-list li {
     float: left; }
+
+.comment-post {
+  border: 1px solid #ccc;
+  background: #f5f5f5;
+  padding: 10px;
+  overflow: hidden; }
+  .comment-post h1 {
+    border-bottom: 1px solid #ccc;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    padding-bottom: 10px; }
+  .comment-post p {
+    font-size: 1.8rem; }
+  .comment-post span {
+    font-size: 1.8rem; }
+
+.comment-list {
+  padding-top: 25px; }
 
 /*# sourceMappingURL=maps/bundle.min.css.map */

@@ -44,27 +44,41 @@ export default class PostDetail extends React.Component {
                     <div className="container">
                         <div className="row">
                             <div className="col-md-12">
-                                <h1>{this.state.posts.title}</h1>
-                                <p>{this.state.posts.body}</p>
+                                <div className="comment-post">
+                                    <div className="col-xs-2">
+                                        <span>Title :</span>
+                                    </div>
+                                    <div className="col-xs-10">
+                                        <h1>{this.state.posts.title}</h1>
+                                    </div>
+                                    <div className="col-xs-2">
+                                        <span>Body :</span>
+                                    </div>
+                                    <div className="col-xs-10">
+                                        <p>{this.state.posts.body}</p>
+                                    </div>
+                                </div>
                             </div>
                             <div className="col-md-12">
-                                <h2>Comments</h2>
+                                <div className="comment-list">
+                                    <h2>Comments</h2>
 
-                                <table className="table table-responsive">
-                                    <thead>
-                                        <tr>
-                                            <th>No.</th>
-                                            <th>Name</th>
-                                            <th>Email</th>
-                                            <th>Body</th>
-                                            <th colSpan="2"><button>Add New Comment</button></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        { !this.state.status && <tr><td colSpan="4">Loading...</td></tr> }
-                                        { Comments }
-                                    </tbody>
-                                </table>
+                                    <table className="table table-responsive">
+                                        <thead>
+                                            <tr>
+                                                <th>No.</th>
+                                                <th>Name</th>
+                                                <th>Email</th>
+                                                <th>Body</th>
+                                                <th colSpan="2"><button>Add New Comment</button></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            { !this.state.status && <tr><td colSpan="4">Loading...</td></tr> }
+                                            { Comments }
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
