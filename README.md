@@ -1,12 +1,11 @@
 # Demo
-* http://5adcbcc8b13fb13665adcd51.vibrant-ramanujan-4c49ab.netlify.com
+* http://5adcc471c965922f64f5f319.vibrant-ramanujan-4c49ab.netlify.com/
 
 # Install dependencies
 * npm install
 
 # Update dependencies
-* npm i -g npm-check && npm-check -u (first time only)
-* npm run update (after first installed)
+* npm i
 
 # Run development mode
 * npm run start
