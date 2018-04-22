@@ -4,9 +4,6 @@
 # Install dependencies
 * npm install
 
-# Update dependencies
-* npm i
-
 # Run development mode
 * npm run start
 
