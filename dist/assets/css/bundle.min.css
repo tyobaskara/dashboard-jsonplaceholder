@@ -11566,4 +11566,9 @@ footer {
   overflow-y: hidden;
   -ms-overflow-style: -ms-autohiding-scrollbar; }
 
+.photos-list {
+  overflow: hidden; }
+  .photos-list li {
+    float: left; }
+
 /*# sourceMappingURL=maps/bundle.min.css.map */

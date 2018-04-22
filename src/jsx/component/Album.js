@@ -5,7 +5,7 @@ const Album = (props) => (
     <tr>
         <td>{props.count}</td>
         <td>{props.data.title}</td>
-        <td><NavLink to={"/albums/" + props.username + "/" + props.data.id + "/detail"}>view</NavLink></td>
+        <td><NavLink to={"/photos/" + props.data.id}>view</NavLink></td>
     </tr>
 );
 

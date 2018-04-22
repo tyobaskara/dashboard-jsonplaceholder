@@ -8,6 +8,7 @@ import Users from './jsx/Users';
 import Posts from './jsx/Posts';
 import PostDetail from './jsx/PostDetail';
 import Albums from './jsx/Albums';
+import AlbumDetail from './jsx/AlbumDetail';
 import { Page404 } from './jsx/component/Page404';
 
 
@@ -20,6 +21,7 @@ const App = () =>(
                 <Route exact path={'/posts/:username/:id'} render={props => <Posts {...props} />} />
                 <Route exact path={'/postdetail/:id/comments'} render={props => <PostDetail {...props} />} />
                 <Route exact path={'/albums/:username/:id'} render={props => <Albums {...props} />} />
+                <Route exact path={'/photos/:id'} render={props => <AlbumDetail {...props} />} />
                 <Route component={Page404}/>
             </Switch>
             <Footer />

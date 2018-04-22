@@ -1,6 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import Post from './component/Post';
+import Photo from './component/Photo';
  
 export default class Posts extends React.Component {
     state = {
@@ -45,7 +45,7 @@ export default class Posts extends React.Component {
                 <div className="container-fluid">
                     <div className="container">
                         <h1>Photos</h1>
-                        <ul>
+                        <ul className="photos-list">
                             { !this.state.status && <li colSpan="4">Loading...</li> }
                             { Photos }
                         </ul>
