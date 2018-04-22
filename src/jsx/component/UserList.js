@@ -44,8 +44,8 @@ export default class UserList extends React.Component {
                             <th>Username</th>
                             <th>Email</th>
                             <th>Phone</th>
-                            <th>Albums</th>
                             <th>Posts</th>
+                            <th>Albums</th>
                         </tr>
                     </thead>
                     <tbody>

@@ -5,7 +5,7 @@ import { Navigation } from './jsx/component/Navigation';
 import { Footer } from './jsx/component/Footer';
 
 import Users from './jsx/Users';
-import About from './jsx/About';
+import Posts from './jsx/Posts';
 import { Page404 } from './jsx/component/Page404';
 
 
@@ -15,7 +15,7 @@ const App = () =>(
             <Navigation/>
             <Switch>
                 <Route exact path={'/'} render={props => <Users {...props} />} />
-                <Route exact path={'/about'} render={props => <About {...props} />} />
+                <Route exact path={'/posts/:username/:id'} render={props => <Posts {...props} />} />
                 <Route component={Page404}/>
             </Switch>
             <Footer />

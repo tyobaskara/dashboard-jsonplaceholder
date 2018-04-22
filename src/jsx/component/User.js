@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const User = (props) => (
     <tr>
@@ -7,8 +8,8 @@ const User = (props) => (
         <td>{props.data.username}</td>
         <td>{props.data.email}</td>
         <td>{props.data.phone}</td>
-        <td><a href="#">view</a></td>
-        <td><a href="#">view</a></td>
+        <td><NavLink to={"/posts/" + props.data.username + "/" + props.data.id}>view</NavLink></td>
+        <td><NavLink to={"/albums/" + props.data.username + "/" + props.data.id}>view</NavLink></td>
     </tr>
 );
 
