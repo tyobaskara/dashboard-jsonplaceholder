@@ -1,10 +1,10 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import Post from './component/Post';
+import Album from './component/Album';
  
-export default class Posts extends React.Component {
+export default class Albums extends React.Component {
     state = {
-        posts: [],
+        albums: [],
         status: false
     }
   
@@ -14,9 +14,9 @@ export default class Posts extends React.Component {
 
     getPosts = () => {
         const id = this.props.match.params.id;
-        const postsUrl = `https://jsonplaceholder.typicode.com/posts?userId=${id}`;
+        const albumUrl = `https://jsonplaceholder.typicode.com/albums?userId=${id}`;
 
-        fetch(postsUrl).then(response => {
+        fetch(albumUrl).then(response => {
             if (response.ok) {
                 return response.json();
             }
@@ -26,7 +26,7 @@ export default class Posts extends React.Component {
         }
         ).then(jsonResponse => {
             if(jsonResponse != null) {
-                this.setState({posts: jsonResponse, status: true});
+                this.setState({albums: jsonResponse, status: true});
             }
         });
     }
@@ -34,14 +34,14 @@ export default class Posts extends React.Component {
     render() {
         const metaTitle = this.props.match.params.username;
 
-        const Posts = this.state.posts.map((post, index) => 
-            <Post data={post} key={index} count={index + 1} username={this.props.match.params.username}/>
+        const Albums = this.state.albums.map((album, index) => 
+            <Album data={album} key={index} count={index + 1} username={this.props.match.params.username}/>
         );
 
         return (
             <div>
                 <Helmet>
-                    <title>Posts - {metaTitle}</title>
+                    <title>Albums - {metaTitle}</title>
                     <meta name="title" content={metaTitle} />
                 </Helmet>
 
@@ -52,13 +52,12 @@ export default class Posts extends React.Component {
                                 <tr>
                                     <th>No.</th>
                                     <th>Title</th>
-                                    <th>Body</th>
                                     <th>detail</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 { !this.state.status && <tr><td colSpan="4">Loading...</td></tr> }
-                                { Posts }
+                                { Albums }
                             </tbody>
                         </table>
                     </div>
