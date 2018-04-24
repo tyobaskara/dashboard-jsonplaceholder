@@ -1,4 +1,4 @@
-@import './vendor/bootstrap';
+@import './vendor/semantic';
 @import './vendor/animate';
 @import './vendor/_reset';
 @import './vendor/slick';
@@ -33,6 +33,8 @@ a:hover, a:focus, a:active {
     text-decoration: none;
     outline: none;
 }
+.ui.page.dimmer.visible.transition {display: flex !important;}
+.ui.modal > .content > .description {width: 100%;}
 .btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus {outline: none;}
 .posRelative {position: relative;}
 .posInitial {position: initial;}

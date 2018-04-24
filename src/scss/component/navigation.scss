@@ -1,5 +1,6 @@
 .ovHidden {overflow: hidden;}
-.nav {
+nav.nav {
+    width: auto;
     &__logo {
         border-bottom: 1px solid $orange1;
         padding-left: 15px;

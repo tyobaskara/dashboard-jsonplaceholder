@@ -1,7 +1,8 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import Post from './component/Post';
- 
+import { Container } from 'semantic-ui-react';
+
 export default class Posts extends React.Component {
     state = {
         posts: [],
@@ -46,7 +47,7 @@ export default class Posts extends React.Component {
                 </Helmet>
 
                 <div className="container-fluid">
-                    <div className="container">
+                    <Container>
                         <h1>Posts List</h1>
                         <table className="table table-responsive">
                             <thead>
@@ -63,7 +64,7 @@ export default class Posts extends React.Component {
                                 { Posts }
                             </tbody>
                         </table>
-                    </div>
+                    </Container>
                 </div>
             </div>
         )
