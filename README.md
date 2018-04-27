@@ -1,5 +1,5 @@
 # Demo
-* http://5adcc471c965922f64f5f319.vibrant-ramanujan-4c49ab.netlify.com/
+* http://vibrant-ramanujan-4c49ab.netlify.com
 
 # Install dependencies
 * npm install
