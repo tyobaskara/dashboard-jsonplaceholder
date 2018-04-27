@@ -90,9 +90,10 @@ div,p,span,label {
 }
 .ui.table {
     font-size: 1.8rem;
-    margin-top: 25px;
-    margin-bottom: 25px;
     text-align: center;
+    &:last-child {
+        margin-bottom: 25px;
+    }
     > thead > tr > th {
         vertical-align: middle;
     }
