@@ -1,6 +1,8 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import Comment from './component/Comment';
+import { Container } from 'semantic-ui-react';
+import { Table } from 'semantic-ui-react'
  
 export default class PostDetail extends React.Component {
     state = {
@@ -41,7 +43,7 @@ export default class PostDetail extends React.Component {
                 </Helmet>
 
                 <div className="container-fluid">
-                    <div className="container">
+                    <Container>
                         <div className="row">
                             <div className="col-md-12">
                                 <div className="comment-post">
@@ -61,27 +63,27 @@ export default class PostDetail extends React.Component {
                             </div>
                             <div className="col-md-12">
                                 <div className="comment-list">
-                                    <h2>Comments</h2>
+                                    <h2 className="table-title">Comments</h2>
 
-                                    <table className="table table-responsive">
-                                        <thead>
-                                            <tr>
-                                                <th>No.</th>
-                                                <th>Name</th>
-                                                <th>Email</th>
-                                                <th>Body</th>
-                                                <th colSpan="2"><button>Add New Comment</button></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            { !this.state.status && <tr><td colSpan="4">Loading...</td></tr> }
+                                    <Table striped>
+                                        <Table.Header>
+                                            <Table.Row>
+                                                <Table.HeaderCell>No.</Table.HeaderCell>
+                                                <Table.HeaderCell>Name</Table.HeaderCell>
+                                                <Table.HeaderCell>Email</Table.HeaderCell>
+                                                <Table.HeaderCell>Body</Table.HeaderCell>
+                                                <Table.HeaderCell colSpan="2"><button>Add New Comment</button></Table.HeaderCell>
+                                            </Table.Row>
+                                        </Table.Header>
+                                        <Table.Body>
+                                            { !this.state.status && <Table.Row><Table.Cell colSpan="4">Loading...</Table.Cell></Table.Row> }
                                             { Comments }
-                                        </tbody>
-                                    </table>
+                                        </Table.Body>
+                                    </Table>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </Container>
                 </div>
             </div>
         )

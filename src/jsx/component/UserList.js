@@ -1,5 +1,6 @@
 import React from 'react';
 import User from './User';
+import { Table } from 'semantic-ui-react'
 
 export default class UserList extends React.Component {
     state = {
@@ -36,23 +37,23 @@ export default class UserList extends React.Component {
 
         return (
             <div className="users">
-                <table className="table table-responsive">
-                    <thead>
-                        <tr>
-                            <th>Id</th>
-                            <th>Name</th>
-                            <th>Username</th>
-                            <th>Email</th>
-                            <th>Phone</th>
-                            <th>Posts</th>
-                            <th>Albums</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        { !this.state.status && <tr><td colSpan="7">Loading...</td></tr> }
+                <Table striped>
+                    <Table.Header>
+                        <Table.Row>
+                            <Table.HeaderCell>Id</Table.HeaderCell>
+                            <Table.HeaderCell>Name</Table.HeaderCell>
+                            <Table.HeaderCell>Username</Table.HeaderCell>
+                            <Table.HeaderCell>Email</Table.HeaderCell>
+                            <Table.HeaderCell>Phone</Table.HeaderCell>
+                            <Table.HeaderCell>Posts</Table.HeaderCell>
+                            <Table.HeaderCell>Albums</Table.HeaderCell>
+                        </Table.Row>
+                    </Table.Header>
+                    <Table.Body>
+                        { !this.state.status && <Table.Row><Table.Cell colSpan="7">Loading...</Table.Cell></Table.Row> }
                         { Users }
-                    </tbody>
-                </table>
+                    </Table.Body>
+                </Table>
             </div>
         );
     }

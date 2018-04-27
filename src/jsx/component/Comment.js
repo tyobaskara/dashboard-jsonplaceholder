@@ -1,14 +1,15 @@
 import React from 'react';
+import { Table } from 'semantic-ui-react';
 
 const Comment = (props) => (
-    <tr>
-        <td>{props.count}</td>
-        <td>{props.data.name}</td>
-        <td>{props.data.email}</td>
-        <td>{props.data.body}</td>
-        <td><button>Edit</button></td>
-        <td><button>Delete</button></td>
-    </tr>
+    <Table.Row>
+        <Table.Cell>{props.count}</Table.Cell>
+        <Table.Cell>{props.data.name}</Table.Cell>
+        <Table.Cell>{props.data.email}</Table.Cell>
+        <Table.Cell>{props.data.body}</Table.Cell>
+        <Table.Cell><button>Edit</button></Table.Cell>
+        <Table.Cell><button>Delete</button></Table.Cell>
+    </Table.Row>
 );
 
 export default Comment;

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import Photo from './component/Photo';
+import { Container } from 'semantic-ui-react';
  
 export default class Posts extends React.Component {
     state = {
@@ -43,13 +44,13 @@ export default class Posts extends React.Component {
                 </Helmet>
 
                 <div className="container-fluid">
-                    <div className="container">
+                    <Container>
                         <h1>Photos</h1>
                         <ul className="photos-list">
                             { !this.state.status && <li colSpan="4">Loading...</li> }
                             { Photos }
                         </ul>
-                    </div>
+                    </Container>
                 </div>
             </div>
         )

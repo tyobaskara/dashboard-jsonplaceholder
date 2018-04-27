@@ -2,6 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import Post from './component/Post';
 import { Container } from 'semantic-ui-react';
+import { Table } from 'semantic-ui-react'
 
 export default class Posts extends React.Component {
     state = {
@@ -48,22 +49,22 @@ export default class Posts extends React.Component {
 
                 <div className="container-fluid">
                     <Container>
-                        <h1>Posts List</h1>
-                        <table className="table table-responsive">
-                            <thead>
-                                <tr>
-                                    <th>No.</th>
-                                    <th>Title</th>
-                                    <th>Body</th>
-                                    <th>Detail</th>
-                                    <th colSpan="2"><button>Add New Post</button></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                { !this.state.status && <tr><td colSpan="4">Loading...</td></tr> }
+                        <h1 className="table-title">Posts List</h1>
+                        <Table striped>
+                            <Table.Header>
+                                <Table.Row>
+                                    <Table.HeaderCell>No.</Table.HeaderCell>
+                                    <Table.HeaderCell>Title</Table.HeaderCell>
+                                    <Table.HeaderCell>Body</Table.HeaderCell>
+                                    <Table.HeaderCell>Detail</Table.HeaderCell>
+                                    <Table.HeaderCell colSpan="2"><button>Add New Post</button></Table.HeaderCell>
+                                </Table.Row>
+                            </Table.Header>
+                            <Table.Body>
+                                { !this.state.status && <Table.Row><td colSpan="4">Loading...</td></Table.Row> }
                                 { Posts }
-                            </tbody>
-                        </table>
+                            </Table.Body>
+                        </Table>
                     </Container>
                 </div>
             </div>

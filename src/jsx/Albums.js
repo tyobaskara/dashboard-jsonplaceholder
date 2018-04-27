@@ -1,6 +1,8 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import Album from './component/Album';
+import { Container } from 'semantic-ui-react';
+import { Table } from 'semantic-ui-react';
  
 export default class Albums extends React.Component {
     state = {
@@ -46,22 +48,22 @@ export default class Albums extends React.Component {
                 </Helmet>
 
                 <div className="container-fluid">
-                    <div className="container">
-                        <h1>Albums List</h1>
-                        <table className="table table-responsive">
-                            <thead>
-                                <tr>
-                                    <th>No.</th>
-                                    <th>Title</th>
-                                    <th>detail</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                { !this.state.status && <tr><td colSpan="4">Loading...</td></tr> }
+                    <Container>
+                        <h1 className="table-title">Albums List</h1>
+                        <Table striped>
+                            <Table.Header>
+                                <Table.Row>
+                                    <Table.HeaderCell>No.</Table.HeaderCell>
+                                    <Table.HeaderCell>Title</Table.HeaderCell>
+                                    <Table.HeaderCell>detail</Table.HeaderCell>
+                                </Table.Row>
+                            </Table.Header>
+                            <Table.Body>
+                                { !this.state.status && <Table.Row><Table.Cell>Loading...</Table.Cell></Table.Row> }
                                 { Albums }
-                            </tbody>
-                        </table>
-                    </div>
+                            </Table.Body>
+                        </Table>
+                    </Container>
                 </div>
             </div>
         )

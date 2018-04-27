@@ -1,16 +1,17 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { Table } from 'semantic-ui-react'
 
 const User = (props) => (
-    <tr>
-        <td>{props.data.id}</td>
-        <td>{props.data.name}</td>
-        <td>{props.data.username}</td>
-        <td>{props.data.email}</td>
-        <td>{props.data.phone}</td>
-        <td><NavLink to={"/posts/" + props.data.username + "/" + props.data.id}>view</NavLink></td>
-        <td><NavLink to={"/albums/" + props.data.username + "/" + props.data.id}>view</NavLink></td>
-    </tr>
+    <Table.Row>
+        <Table.Cell>{props.data.id}</Table.Cell>
+        <Table.Cell>{props.data.name}</Table.Cell>
+        <Table.Cell>{props.data.username}</Table.Cell>
+        <Table.Cell>{props.data.email}</Table.Cell>
+        <Table.Cell>{props.data.phone}</Table.Cell>
+        <Table.Cell><NavLink to={"/posts/" + props.data.username + "/" + props.data.id}>view</NavLink></Table.Cell>
+        <Table.Cell><NavLink to={"/albums/" + props.data.username + "/" + props.data.id}>view</NavLink></Table.Cell>
+    </Table.Row>
 );
 
 export default User;

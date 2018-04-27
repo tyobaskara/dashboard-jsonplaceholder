@@ -1,6 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import UserList from './component/UserList';
+import { Container } from 'semantic-ui-react';
 
 const Users = () => (
     <div>
@@ -9,10 +10,10 @@ const Users = () => (
         </Helmet>
 
         <div className="container-fluid">
-            <div className="container">
-                <h1>Users List</h1>
+            <Container>
+                <h1 className="table-title">Users List</h1>
                 <UserList />
-            </div>
+            </Container>
         </div>
     </div>
 )
