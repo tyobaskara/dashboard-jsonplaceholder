@@ -22,6 +22,7 @@ class DeletePost extends Component {
       <div>
         <Button onClick={this.show}>Delete</Button>
         <Confirm
+          className='confirm-modal'
           open={this.state.open}
           onCancel={this.handleCancel}
           onConfirm={this.handleConfirm}

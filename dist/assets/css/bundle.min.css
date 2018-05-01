@@ -43846,4 +43846,23 @@ footer {
   margin: 10px 0;
   width: 100%; }
 
+.ui.active.modal {
+  margin: auto !important;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+     -moz-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+       -o-transform: translateX(-50%);
+          transform: translateX(-50%);
+  top: 25px; }
+
+.ui.active.modal.confirm-modal {
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+     -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+       -o-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%); }
+
 /*# sourceMappingURL=maps/bundle.min.css.map */
