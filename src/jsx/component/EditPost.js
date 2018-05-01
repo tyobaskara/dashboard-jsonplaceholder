@@ -74,7 +74,7 @@ class EditPost extends React.Component {
         </Modal.Content>
         <Modal.Actions>
           <Button primary onClick={this.proceedEdit}>
-            Proceed <Icon name='right chevron' />
+            Edit Post <Icon name='right chevron' />
           </Button>
         </Modal.Actions>
       </Modal>

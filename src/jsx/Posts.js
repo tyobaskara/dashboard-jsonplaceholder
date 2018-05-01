@@ -2,7 +2,8 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import Post from './component/Post';
 import { Container } from 'semantic-ui-react';
-import { Table } from 'semantic-ui-react'
+import { Table } from 'semantic-ui-react';
+import AddPost from './component/AddPost';
 
 export default class Posts extends React.Component {
     state = {
@@ -57,7 +58,7 @@ export default class Posts extends React.Component {
                                     <Table.HeaderCell>Title</Table.HeaderCell>
                                     <Table.HeaderCell>Body</Table.HeaderCell>
                                     <Table.HeaderCell></Table.HeaderCell>
-                                    <Table.HeaderCell colSpan="2"><button>Add New Post</button></Table.HeaderCell>
+                                    <Table.HeaderCell colSpan="2"><AddPost/></Table.HeaderCell>
                                 </Table.Row>
                             </Table.Header>
                             <Table.Body>
