@@ -10,10 +10,19 @@ class DeletePost extends Component {
     fetch(url, {
         method: 'DELETE'
     })
-    this.setState({ open: false })
-    const row = document.getElementById('postListRow-' + this.props.data);
-	row.parentElement.removeChild(row); 
-    console.log(url , 'deleted');
+    .then(
+        response => {
+            if(response.status != '404') {
+              this.setState({ open: false })
+              const row = document.getElementById('postListRow-' + this.props.data);
+              row.parentElement.removeChild(row); 
+              console.log(url , 'deleted');
+            }
+            else {
+              console.log('api is not correct');
+            }
+        }
+    )
   }
   handleCancel = () => this.setState({ open: false })
 

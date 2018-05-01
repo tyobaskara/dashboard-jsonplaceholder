@@ -16,13 +16,13 @@ class DeleteComment extends Component {
     .then(
         response => {
             if(response.status != '404') {
-                this.setState({ open: false })
-                const row = document.getElementById('comment-list-' + this.props.data.id);
-                row.parentElement.removeChild(row); 
-                console.log(commentUrl , 'deleted');
+              this.setState({ open: false })
+              const row = document.getElementById('comment-list-' + this.props.data.id);
+              row.parentElement.removeChild(row); 
+              console.log(commentUrl , 'deleted');
             }
             else {
-                console.log('api is not correct');
+              console.log('api is not correct');
             }
         }
     )
