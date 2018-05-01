@@ -45,8 +45,8 @@ export default class UserList extends React.Component {
                             <Table.HeaderCell>Username</Table.HeaderCell>
                             <Table.HeaderCell>Email</Table.HeaderCell>
                             <Table.HeaderCell>Phone</Table.HeaderCell>
-                            <Table.HeaderCell>Posts</Table.HeaderCell>
-                            <Table.HeaderCell>Albums</Table.HeaderCell>
+                            <Table.HeaderCell></Table.HeaderCell>
+                            <Table.HeaderCell></Table.HeaderCell>
                         </Table.Row>
                     </Table.Header>
                     <Table.Body>

@@ -56,7 +56,7 @@ export default class Posts extends React.Component {
                                     <Table.HeaderCell>No.</Table.HeaderCell>
                                     <Table.HeaderCell>Title</Table.HeaderCell>
                                     <Table.HeaderCell>Body</Table.HeaderCell>
-                                    <Table.HeaderCell>Detail</Table.HeaderCell>
+                                    <Table.HeaderCell></Table.HeaderCell>
                                     <Table.HeaderCell colSpan="2"><button>Add New Post</button></Table.HeaderCell>
                                 </Table.Row>
                             </Table.Header>

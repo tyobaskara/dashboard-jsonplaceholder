@@ -43841,4 +43841,9 @@ footer {
 .comment-list {
   padding-top: 25px; }
 
+.edit-post input, .edit-post textarea {
+  border: 1px solid #ccc;
+  margin: 10px 0;
+  width: 100%; }
+
 /*# sourceMappingURL=maps/bundle.min.css.map */
