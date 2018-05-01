@@ -59,7 +59,7 @@ class EditPost extends React.Component {
   render() {
     return (
       <Modal className="edit-post" trigger={<Button>Edit</Button>}>
-        <Modal.Header>Edit</Modal.Header>
+        <Modal.Header>Edit Post</Modal.Header>
         <Modal.Content>
           <Modal.Description>
             <div className="title">

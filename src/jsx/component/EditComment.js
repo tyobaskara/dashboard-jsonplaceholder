@@ -6,6 +6,10 @@ class EditComment extends React.Component {
     comment: []
   }
 
+  componentDidMount() {
+    this.getComment();
+  }
+
   getComment = () => {
       const postId = this.props.data.postId;
       const id = this.props.data.id;
@@ -23,7 +27,6 @@ class EditComment extends React.Component {
       ).then(jsonResponse => {
           if(jsonResponse != null) {
               this.setState({comment: jsonResponse[0]});
-              console.log(this.state.comment);
           }
       });
   }
@@ -68,8 +71,8 @@ class EditComment extends React.Component {
 
   render() {
     return (
-      <Modal className="comment-edit" trigger={<Button>Edit</Button>} onOpen={this.getComment}>
-        <Modal.Header>Edit</Modal.Header>
+      <Modal className="comment-edit" trigger={<Button>Edit</Button>}>
+        <Modal.Header>Edit Comment</Modal.Header>
         <Modal.Content>
           <Modal.Description>
             <div className="post-id">

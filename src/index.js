@@ -11,7 +11,6 @@ import Albums from './jsx/Albums';
 import AlbumDetail from './jsx/AlbumDetail';
 import { Page404 } from './jsx/component/Page404';
 
-
 const App = () =>(
     <Router history={browserHistory}>
         <div>

@@ -43844,7 +43844,11 @@ footer {
 .modals input, .modals textarea {
   border: 1px solid #ccc;
   margin: 10px 0;
+  padding: 5px 10px;
   width: 100%; }
+
+.modals input[type="text"]:disabled {
+  background: #dddddd; }
 
 .ui.active.modal {
   margin: auto !important;
