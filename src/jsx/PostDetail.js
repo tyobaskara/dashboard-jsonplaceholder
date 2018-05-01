@@ -76,7 +76,7 @@ export default class PostDetail extends React.Component {
                                             </Table.Row>
                                         </Table.Header>
                                         <Table.Body>
-                                            { !this.state.status && <Table.Row><Table.Cell colSpan="4">Loading...</Table.Cell></Table.Row> }
+                                            { !this.state.status && <Table.Row><Table.Cell colSpan="6">Loading...</Table.Cell></Table.Row> }
                                             { Comments }
                                         </Table.Body>
                                     </Table>

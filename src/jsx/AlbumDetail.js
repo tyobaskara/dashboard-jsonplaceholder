@@ -47,7 +47,7 @@ export default class Posts extends React.Component {
                     <Container>
                         <h1>Photos</h1>
                         <ul className="photos-list">
-                            { !this.state.status && <li colSpan="4">Loading...</li> }
+                            { !this.state.status && <li>Loading...</li> }
                             { Photos }
                         </ul>
                     </Container>

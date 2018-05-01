@@ -50,7 +50,7 @@ export default class Posts extends React.Component {
                 <div className="container-fluid">
                     <Container>
                         <h1 className="table-title">Posts List</h1>
-                        <Table striped>
+                        <Table id="post-list" striped>
                             <Table.Header>
                                 <Table.Row>
                                     <Table.HeaderCell>No.</Table.HeaderCell>
@@ -61,7 +61,7 @@ export default class Posts extends React.Component {
                                 </Table.Row>
                             </Table.Header>
                             <Table.Body>
-                                { !this.state.status && <Table.Row><td colSpan="4">Loading...</td></Table.Row> }
+                                { !this.state.status && <Table.Row><td colSpan="6">Loading...</td></Table.Row> }
                                 { Posts }
                             </Table.Body>
                         </Table>

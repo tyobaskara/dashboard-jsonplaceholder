@@ -59,7 +59,7 @@ export default class Albums extends React.Component {
                                 </Table.Row>
                             </Table.Header>
                             <Table.Body>
-                                { !this.state.status && <Table.Row><Table.Cell>Loading...</Table.Cell></Table.Row> }
+                                { !this.state.status && <Table.Row><Table.Cell colSpan="3">Loading...</Table.Cell></Table.Row> }
                                 { Albums }
                             </Table.Body>
                         </Table>
