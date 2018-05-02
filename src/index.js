@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route, browserHistory, Switch, Redirect } from 'react-router-dom';
+// import { BrowserRouter as Router, Route, browserHistory, Switch, Redirect } from 'react-router-dom';
+import { HashRouter, Route, Switch } from 'react-router-dom';
 import { Navigation } from './jsx/component/Navigation';
 import { Footer } from './jsx/component/Footer';
 
@@ -13,7 +14,7 @@ import { Page404 } from './jsx/component/Page404';
 
 
 const App = () =>(
-    <Router history={browserHistory}>
+    <HashRouter>
         <div>
             <Navigation/>
             <Switch>
@@ -26,7 +27,7 @@ const App = () =>(
             </Switch>
             <Footer />
         </div>
-    </Router>
+    </HashRouter>
 );
 
 
