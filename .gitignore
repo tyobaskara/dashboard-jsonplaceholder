@@ -2,3 +2,5 @@ node_modules/
 .next/
 package-lock.json
 .netlify
+dist/assets/css/
+dist/assets/js/

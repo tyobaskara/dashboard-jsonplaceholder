@@ -43439,6 +43439,9 @@ html, body {
   position: relative;
   z-index: 0; }
 
+body {
+  padding-top: 15px; }
+
 * {
   font-family: 'Helvetica', sans-serif;
   text-decoration: none;
@@ -43710,18 +43713,18 @@ div, p, span, label {
 .ovHidden {
   overflow: hidden; }
 
-nav.nav {
+.nav {
   width: auto; }
-  nav.nav__logo {
+  .nav__logo {
     border-bottom: 1px solid #ef7a16;
     padding-left: 15px; }
-    nav.nav__logo a {
+    .nav__logo a {
       display: inline-block;
       width: 100px; }
-      nav.nav__logo a img {
+      .nav__logo a img {
         max-width: 100%;
         width: 100%; }
-  nav.nav--fixed {
+  .nav--fixed {
     background: #202a36;
     height: 100%;
     position: fixed;
@@ -43729,30 +43732,29 @@ nav.nav {
     top: 0;
     left: 0;
     z-index: 25; }
-    nav.nav--fixed .nav-wrap {
+    .nav--fixed .nav-wrap {
       margin-left: -250px;
-      padding: 0 15px;
       -webkit-transition: all .2s ease;
       -o-transition: all .2s ease;
       -moz-transition: all .2s ease;
       transition: all .2s ease;
       width: 250px; }
-    nav.nav--fixed.nav-open .nav-wrap {
+    .nav--fixed.nav-open .nav-wrap {
       margin-left: 0px; }
-    nav.nav--fixed .nav__menu > li a {
+    .nav--fixed .nav__menu > li a {
       color: white; }
-  nav.nav__menu {
+  .nav__menu {
     margin-top: 25px; }
-    nav.nav__menu > li {
+    .nav__menu > li {
       display: block;
       vertical-align: middle; }
-      nav.nav__menu > li a {
+      .nav__menu > li a {
         display: block;
         color: ghostwhite;
         font-size: 1.8rem;
         padding: 7px 15px;
         position: relative; }
-        nav.nav__menu > li a:after {
+        .nav__menu > li a:after {
           content: '|';
           position: absolute;
           right: 15px;
@@ -43763,13 +43765,13 @@ nav.nav {
                -o-transform: translateY(-50%);
                   transform: translateY(-50%);
           color: ghostwhite; }
-        nav.nav__menu > li a.active, nav.nav__menu > li a:hover {
+        .nav__menu > li a.active, .nav__menu > li a:hover {
           color: #ef7a16;
           -webkit-transition: all 0.3s ease-in-out;
           -moz-transition: all 0.3s ease-in-out;
           -o-transition: all 0.3s ease-in-out;
           transition: all 0.3s ease-in-out; }
-          nav.nav__menu > li a.active:after, nav.nav__menu > li a:hover:after {
+          .nav__menu > li a.active:after, .nav__menu > li a:hover:after {
             color: wheat; }
 
 .nav.nav-open .hamburgerSlim:before {
@@ -43838,5 +43840,33 @@ footer {
 
 .comment-list {
   padding-top: 25px; }
+
+.modals input, .modals textarea {
+  border: 1px solid #ccc;
+  margin: 10px 0;
+  padding: 5px 10px;
+  width: 100%; }
+
+.modals input[type="text"]:disabled {
+  background: #dddddd; }
+
+.ui.active.modal {
+  margin: auto !important;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+     -moz-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+       -o-transform: translateX(-50%);
+          transform: translateX(-50%);
+  top: 25px; }
+
+.ui.active.modal.confirm-modal {
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+     -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+       -o-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%); }
 
 /*# sourceMappingURL=maps/bundle.min.css.map */

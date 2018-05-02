@@ -2,7 +2,8 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import Post from './component/Post';
 import { Container } from 'semantic-ui-react';
-import { Table } from 'semantic-ui-react'
+import { Table } from 'semantic-ui-react';
+import AddPost from './component/AddPost';
 
 export default class Posts extends React.Component {
     state = {
@@ -50,18 +51,18 @@ export default class Posts extends React.Component {
                 <div className="container-fluid">
                     <Container>
                         <h1 className="table-title">Posts List</h1>
-                        <Table striped>
+                        <Table id="post-list" striped>
                             <Table.Header>
                                 <Table.Row>
                                     <Table.HeaderCell>No.</Table.HeaderCell>
                                     <Table.HeaderCell>Title</Table.HeaderCell>
                                     <Table.HeaderCell>Body</Table.HeaderCell>
-                                    <Table.HeaderCell>Detail</Table.HeaderCell>
-                                    <Table.HeaderCell colSpan="2"><button>Add New Post</button></Table.HeaderCell>
+                                    <Table.HeaderCell></Table.HeaderCell>
+                                    <Table.HeaderCell colSpan="2"><AddPost/></Table.HeaderCell>
                                 </Table.Row>
                             </Table.Header>
                             <Table.Body>
-                                { !this.state.status && <Table.Row><td colSpan="4">Loading...</td></Table.Row> }
+                                { !this.state.status && <Table.Row><td colSpan="6">Loading...</td></Table.Row> }
                                 { Posts }
                             </Table.Body>
                         </Table>

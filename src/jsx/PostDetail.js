@@ -1,8 +1,9 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import Comment from './component/Comment';
+import AddComment from './component/AddComment';
 import { Container } from 'semantic-ui-react';
-import { Table } from 'semantic-ui-react'
+import { Table } from 'semantic-ui-react';
  
 export default class PostDetail extends React.Component {
     state = {
@@ -30,6 +31,7 @@ export default class PostDetail extends React.Component {
             }
         })
     }
+
     render() {
 
         const Comments = this.state.comments.map((comment, index) => 
@@ -72,11 +74,11 @@ export default class PostDetail extends React.Component {
                                                 <Table.HeaderCell>Name</Table.HeaderCell>
                                                 <Table.HeaderCell>Email</Table.HeaderCell>
                                                 <Table.HeaderCell>Body</Table.HeaderCell>
-                                                <Table.HeaderCell colSpan="2"><button>Add New Comment</button></Table.HeaderCell>
+                                                <Table.HeaderCell colSpan="2"><AddComment data={this.props.match.params.id}/></Table.HeaderCell>
                                             </Table.Row>
                                         </Table.Header>
                                         <Table.Body>
-                                            { !this.state.status && <Table.Row><Table.Cell colSpan="4">Loading...</Table.Cell></Table.Row> }
+                                            { !this.state.status && <Table.Row><Table.Cell colSpan="6">Loading...</Table.Cell></Table.Row> }
                                             { Comments }
                                         </Table.Body>
                                     </Table>

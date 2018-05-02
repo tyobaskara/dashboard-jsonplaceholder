@@ -16,6 +16,9 @@ html, body {
     position: relative;
     z-index: 0;
 } 
+body {
+    padding-top: 15px;
+}
 * { 
     font-family: 'Helvetica', sans-serif; 
     text-decoration: none;
@@ -120,3 +123,4 @@ div,p,span,label {
 @import './component/users';
 @import './component/Photos';
 @import './component/PostDetail';
+@import './component/Modal';
