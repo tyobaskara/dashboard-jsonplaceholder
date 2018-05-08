@@ -17,8 +17,3 @@
 
 # Deploy
 * npm run deploy
-
-# What's ?
-* React helmet
-* React Router
-* Webpack Combined inside gulp
